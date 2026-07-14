@@ -1,5 +1,5 @@
 <div align="center">
-<img src="assets/emotion.webp" alt="Emotion Detector" width="180"/>
+<img src="dashboard/emotion.webp" alt="Emotion Detector" width="180"/>
 <h1>Real-Time Emotion Detector</h1>
 
 <p>A production-ready AI system that detects multiple faces simultaneously, classifies their expressions in real-time using a deep CNN, and streams live annotated video + emotion analytics to a web dashboard — at 30 fps.</p>
