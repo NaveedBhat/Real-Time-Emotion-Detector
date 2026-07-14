@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Emotion Detector Dashboard</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/static/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.3/dist/chart.umd.min.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="dashboard-container">
+        <!-- Header -->
+        <header class="dashboard-header">
+            <div class="logo">
+                <img src="/static/emotion.webp" alt="logo" class="logo-img" width="58" height="58" style="max-width: 58px; max-height: 58px;">
+                <div>
+                    <span class="eyebrow">Real-Time Vision System</span>
+                    <h1>Emotion Detector</h1>
+                </div>
+            </div>
+            <div class="status-indicators">
+                <div class="status-badge">
+                    <span class="indicator-dot active"></span>
+                    <span id="ws-status">Connected</span>
+                </div>
+                <div class="status-badge fps-badge">
+                    <span>FPS <span id="fps-val">--</span></span>
+                </div>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <div class="main-grid">
+            <!-- Left Column: Video -->
+            <div class="video-section card glass">
+                <div class="card-header">
+                    <h2>Live Feed</h2>
+                    <span class="badge" id="face-count-badge">0 Faces</span>
+                </div>
+                <div class="video-container">
+                    <span class="vf-corner-bl"></span>
+                    <span class="vf-corner-br"></span>
+                    <span class="vf-scanline"></span>
+                    <img id="video-feed" src="/video_feed" alt="Live Camera Feed">
+                </div>
+            </div>
+
+            <!-- Right Column: Analytics -->
+            <div class="analytics-section">
+
+                <!-- Chart -->
+                <div class="chart-section card glass">
+                    <div class="card-header">
+                        <h2>Emotion Trends (Last 60s)</h2>
+                    </div>
+                    <div id="emotion-legend" class="emotion-legend"></div>
+                    <div class="chart-container">
+                        <canvas id="emotionChart"></canvas>
+                    </div>
+                </div>
+
+                <!-- Session Stats -->
+                <div class="stats-section card glass">
+                    <div class="card-header">
+                        <h2>Session Summary</h2>
+                        <button id="btn-export" class="btn-primary">
+                            <span class="icon">↓</span> Export CSV
+                        </button>
+                    </div>
+                    <div class="stats-grid">
+                        <div class="stat-box">
+                            <span class="stat-label">Dominant Emotion</span>
+                            <span class="stat-value" id="stat-dominant">--</span>
+                        </div>
+                        <div class="stat-box">
+                            <span class="stat-label">Avg Confidence</span>
+                            <span class="stat-value" id="stat-confidence">--%</span>
+                        </div>
+                        <div class="stat-box">
+                            <span class="stat-label">Total Records</span>
+                            <span class="stat-value" id="stat-records">0</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- Bottom Row: Per-Face Cards -->
+        <div class="faces-section card glass">
+            <div class="card-header">
+                <h2>Active Faces</h2>
+            </div>
+            <div class="faces-grid" id="faces-container">
+                <!-- Face cards injected by JS -->
+                <div class="no-faces-msg" id="no-faces-msg">Waiting for faces...</div>
+            </div>
+        </div>
+
+    </div>
+
+    <script src="/static/app.js"></script>
+</body>
+</html>

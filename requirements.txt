@@ -1,0 +1,29 @@
+# Core computer vision
+opencv-python==4.11.0.86
+
+# Face landmark detection (mouth/lip analysis)
+mediapipe==0.10.9
+attrs==26.1.0
+protobuf==3.20.3
+
+# Pretrained facial emotion recognition
+fer==22.5.1
+
+# FER backend
+tensorflow==2.16.2
+
+# Array math
+numpy==1.26.4
+
+# Configuration
+pyyaml==6.0.1
+pytest==8.3.4
+
+# Web Dashboard (FastAPI)
+fastapi==0.115.6
+uvicorn==0.34.0
+aiofiles==24.1.0
+websockets==15.0.1
+
+# Optional: DeepFace model backend
+# deepface==0.0.93

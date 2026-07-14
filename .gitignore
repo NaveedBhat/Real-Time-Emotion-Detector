@@ -1,0 +1,34 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.Python
+
+# Virtual environment
+venv/
+env/
+.env
+
+# Session data (auto-generated, not for repo)
+sessions/
+
+# Logs (auto-generated, not for repo)
+logs/
+
+# IDE / OS
+.vscode/
+.idea/
+.DS_Store
+*.swp
+
+# Pytest cache
+.pytest_cache/
+
+
+
+# Locked dependency tree (optional — uncomment to include)
+# requirements.lock
+
+# Internal Documentation
+Guide_Emotion.md

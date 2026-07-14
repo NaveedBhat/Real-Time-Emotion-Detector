@@ -1,0 +1,23 @@
+{
+  "pythonPath": "/Users/naveedbhat/Personal_Projects/emotion_detector/venv/bin/python3",
+  "venvPath": "/Users/naveedbhat/Personal_Projects/emotion_detector",
+  "venv": "venv",
+  "pythonVersion": "3.9",
+  "include": [
+    ".",
+    "src",
+    "tests",
+    "main.py",
+    "server.py"
+  ],
+  "exclude": [
+    "venv",
+    "**/__pycache__"
+  ],
+  "extraPaths": [
+    "."
+  ],
+  "typeCheckingMode": "basic",
+  "reportMissingImports": "warning",
+  "reportMissingModuleSource": "none"
+}

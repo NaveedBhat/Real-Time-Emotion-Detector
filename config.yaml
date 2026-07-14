@@ -1,0 +1,39 @@
+# Emotion Detector — Configuration
+# All tunables in one place. CLI flags override these values.
+
+camera:
+  index: 0          # webcam index (try 1, 2 if 0 doesn't work)
+  width: 1280
+  height: 720
+
+inference:
+  skip_frames: 2                  # run emotion model every N frames
+  smoothing_window: 8             # rolling average window
+  use_mtcnn: false                # false = faster; true = more accurate face detect
+  min_detection_confidence: 0.5
+  min_tracking_confidence: 0.5
+  max_num_faces: 5                # max simultaneous faces (web dashboard mode)
+  model_backend: fer              # fer | deepface
+
+display:
+  window_title: "Emotion Detector AI — press Q to quit"
+  show_probability_bars: true
+  show_emotion_history: true
+  history_length: 90
+  fps_ema_alpha: 0.1
+
+web:
+  host: "127.0.0.1"
+  port: 8080
+  mjpeg_quality: 85               # JPEG quality for video stream (1-95)
+
+session:
+  save_dir: sessions              # per-session CSV files saved here
+  chart_window_seconds: 60       # seconds of history shown in chart
+
+logging:
+  level: INFO
+  log_to_file: true
+  log_file: logs/emotion_detector.log
+  max_bytes: 5242880
+  backup_count: 3
